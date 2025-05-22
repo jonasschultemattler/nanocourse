@@ -26,7 +26,7 @@ make
 
 Test
 ```
-./build/source/naivecounting "data/ecoli1_k31_ust.fa.gz"
+./build/source/naivecounting1 "data/ecoli1_k31_ust.fa.gz"
 ```
 
 Create a virtual python environment
