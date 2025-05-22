@@ -1,4 +1,4 @@
-# Genomic analysis using sketching techniques
+# Nanocourse - Genomic analysis using sketching techniques
 
 
 ## Setup
@@ -12,7 +12,7 @@ Requirements:
 
 Checkout
 ```
-git clone --recurse-submodules https://github.com/jonasschultemattler/cardinalities.git
+git clone --recurse-submodules https://github.com/jonasschultemattler/nano.git
 ```
 
 See https://docs.seqan.de/seqan3/main_user/setup.html for compiler setup. Compile with
@@ -26,14 +26,14 @@ make
 
 Test
 ```
-./build/source/naivecounting "data/ecoli1_k31_ust.fa.gz"
+.build/source/naivecounting "data/ecoli1_k31_ust.fa.gz"
 ```
 
 Create a virtual python environment
 ```
 python3 -m venv venv
 source venv/bin/activate
-python3 -m pip install -r requirements.txt
+python3 -m pip install psutil, matplotlib, numpy, notebook
 ```
 
 Test
