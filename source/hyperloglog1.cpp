@@ -1,5 +1,6 @@
-#include "hyperloglog.hpp"
+#include "hyperloglog1.hpp"
 
+// TODO: implement HyperLogLog in hperloglog1.hpp
 
 int main(int argc, char** argv)
 {

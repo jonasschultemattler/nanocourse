@@ -1,15 +1,8 @@
 #include <seqan3/io/sequence_file/all.hpp>
 #include <seqan3/search/views/kmer_hash.hpp>
-
 #include "hashfunctions.hpp"
+#include "util.hpp"
 
-
-const std::vector<std::filesystem::path> files = {
-        "data/ecoli1_k31_ust.fa.gz",
-        "data/ecoli2_k31_ust.fa.gz",
-        "data/ecoli4_k31_ust.fa.gz",
-        "data/salmonella_100_k31_ust.fa.gz"};
-const int n = 4;
 const uint8_t k = 31;
 
 const uint64_t prime = (1UL << 61) - 1;
@@ -20,14 +13,6 @@ struct my_traits:seqan3::sequence_file_input_default_traits_dna {
     using sequence_alphabet = seqan3::dna4;
 };
 
-void print_matrix(double matrix[n][n]) {
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            std::cout << matrix[i][j] << " ";
-        }
-        std::cout << '\n';
-    }
-}
 
 void minhash_sketch(const std::filesystem::path &filepath, uint64_t permutations, uint64_t minhashs[],
                     const uint64_t a[], const uint64_t b[], uint64_t (*hashFunc)(uint64_t))
